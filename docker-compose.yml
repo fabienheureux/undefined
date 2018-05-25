@@ -10,7 +10,7 @@ services:
       - ./web:/home/node/web
     ports:
       - "3000:3000"
-    command: bash -c "yarn && yarn && yarn start"
+    command: bash -c "yarn && yarn start"
 
   api:
     image: "node:${NODE_VERSION}"
@@ -22,7 +22,7 @@ services:
       - ./api:/home/node/api
     ports:
       - "4000:4000"
-    command: bash -c "yarn && yarn && yarn start"
+    command: bash -c "yarn && yarn start"
 
   auth:
     image: "node:${NODE_VERSION}"
@@ -34,7 +34,7 @@ services:
       - ./auth:/home/node/auth
     ports:
       - "4100:4100"
-    command: bash -c "yarn && yarn && yarn start"
+    command: bash -c "yarn && yarn start"
 
   rethinkdb:
     image: "rethinkdb"
