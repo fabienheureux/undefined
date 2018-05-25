@@ -9,7 +9,7 @@ Like...there is still no app, almost.
 
 ## Setup
 Install `docker`
-Run `docker-compose up` in root directory
+Run `docker-compose up -d` in root directory
 
 ### Frontend
 Go to `http://localhost:3000` to see the frontend app
@@ -20,6 +20,11 @@ The backend runs on `4000` port
 ### Database
 The databse runs on `28015` port
 
+### Monitor
+You can go to `http://localhost:9000` to monitor the current project.
+
 ## Credits
 @tokalazy sort of got the idea for this project.
 His code is the main source of inspiration.
+
+
