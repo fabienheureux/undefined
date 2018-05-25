@@ -11,17 +11,12 @@ Like...there is still no app, almost.
 Install `docker`
 Run `docker-compose up -d` in root directory
 
-### Frontend
-Go to `http://localhost:3000` to see the frontend app
-
-### Backend
-The backend runs on `4000` port
-
-### Database
-The databse runs on `28015` port
-
-### Monitor
-You can go to `http://localhost:9000` to monitor the current project.
+| Service\Range   | 000         | 100   | 200   | 300   | 400   |
+|---------------- |-----------  |------ |-----  |-----  |-----  |
+| Front: 3*       | Web         |       |       |       |       |
+| Back: 4*        | API         | Auth  |       |       |       |
+| Database: 5*    | Rethinkdb   |       |       |       |       |
+| Monitoring: 9*  | Portainer   |       |       |       |       |
 
 ## Credits
 @tokalazy sort of got the idea for this project.

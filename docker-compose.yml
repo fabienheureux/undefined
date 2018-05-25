@@ -39,7 +39,7 @@ services:
   rethinkdb:
     image: "rethinkdb"
     ports:
-      - "28015:28015"
+      - "5000:28015"
 
   portainer:
     image: portainer/portainer
