@@ -8,13 +8,13 @@ const PORT = process.env.PORT ? parseInt(process.env.PORT, 10) : 4000
 const NODE_ENV = process.env.NODE_ENV ? process.env.NODE_ENV : 'development'
 
 // koaBody is needed just for POST.
-router.post('/graphql', koaBody(), graphqlKoa({ schema: myGraphQLSchema }));
-router.get('/graphql', graphqlKoa({ schema: myGraphQLSchema }));
+router.post('/graphql', koaBody(), graphqlKoa({ schema: myGraphQLSchema }))
+router.get('/graphql', graphqlKoa({ schema: myGraphQLSchema }))
 
-router.get('/graphiql', graphiqlKoa({ endpointURL: '/graphql' }));
+router.get('/graphiql', graphiqlKoa({ endpointURL: '/graphql' }))
 
-app.use(router.routes());
-app.use(router.allowedMethods());
+app.use(router.routes())
+app.use(router.allowedMethods())
 
 // response
 console.log(`API is listening on port ${PORT} in ${NODE_ENV} mode`)
