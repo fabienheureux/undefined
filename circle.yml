@@ -1,0 +1,4 @@
+notify:
+  webhooks:
+    # A list of hook hashes, containing the URL field
+    - url: https://discordapp.com/api/webhooks/449514945957330954/0QP2Ane9-Gq4Eo5U6Ui8NUOysYZsidGBtXMQGkv4nxa4w-3vGYD0IpG0QgiWRK1sg8sj/circle
