@@ -9,7 +9,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "apollo-server-koa": "^1.3.6",
     "graphql": "^0.13.2",
-    "koa": "^2.5.1"
+    "koa": "^2.5.1",
+    "koa-bodyparser": "^4.2.1",
+    "koa-router": "^7.4.0"
   }
 }
