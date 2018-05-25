@@ -1,16 +1,40 @@
 version: "3"
 services:
-  node:
-    image: "node:10"
+  web:
+    image: "node:${NODE_VERSION}"
     user: "node"
-    working_dir: /home/node/app
+    working_dir: /home/node/web
     environment:
-      - NODE_ENV=production
+      - NODE_ENV="${NODE_ENV}"
     volumes:
-      - ./:/home/node/app
+      - ./web:/home/node/web
     ports:
       - "3000:3000"
-    command: "npm start"
+    command: bash -c "yarn && yarn && yarn start"
+
+  api:
+    image: "node:${NODE_VERSION}"
+    user: "node"
+    environment:
+      - NODE_ENV="${NODE_ENV}"
+    working_dir: /home/node/api
+    volumes:
+      - ./api:/home/node/api
+    ports:
+      - "4000:4000"
+    command: bash -c "yarn && yarn && yarn start"
+
+  auth:
+    image: "node:${NODE_VERSION}"
+    user: "node"
+    environment:
+      - NODE_ENV="${NODE_ENV}"
+    working_dir: /home/node/auth
+    volumes:
+      - ./auth:/home/node/auth
+    ports:
+      - "4100:4100"
+    command: bash -c "yarn && yarn && yarn start"
 
   rethinkdb:
     image: "rethinkdb"
