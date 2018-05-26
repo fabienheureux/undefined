@@ -1,0 +1,37 @@
+type Author {
+  id: String!
+  nickName: String
+  posts: [Post]
+  createdAt: String
+  updatedAt: String
+}
+
+type Post {
+  id: String!
+  title: String
+  author: Author
+  votes: Int
+  createdAt: String
+  updatedAt: String
+}
+
+type Query {
+  author(id: String!): Author
+  authors: [Author]
+  post(id: String!): Post
+  posts: [Post]
+}
+
+type Mutation {
+  createAuthor(nickName: String!): Author
+  updateAuthor(id: String!, nickName: String!): Author
+  createPost(title: String!, votes: Int!, authorId: String!): Post
+  updatePost(id: String!, title: String, votes: Int, authorId: String): Post
+  deletePost(id: String!): Post
+  deleteAuthor(id: String!): Author
+}
+
+schema {
+  query: Query
+  mutation: Mutation
+}
