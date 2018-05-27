@@ -1,10 +1,10 @@
 import * as fs from 'fs'
 import { GraphQLSchema } from 'graphql'
 import { makeExecutableSchema } from 'graphql-tools'
-import resolvers from '../graphql/resolvers'
+import resolvers from './resolvers'
 
 const typeDefs: string = fs.readFileSync(
-  '../graphql/schema.graphql',
+  './graphql/schema.graphql',
   'utf-8'
 )
 

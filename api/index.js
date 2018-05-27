@@ -1,14 +1,15 @@
-import * as Koa from 'koa'
+import Koa from 'koa'
 import { start as enablePrettyError } from 'pretty-error'
-import * as KoaRouter from 'koa-router'
-import * as KoaBody from 'koa-bodyparser'
-import * as cors from 'kcors'
+import KoaRouter from 'koa-router'
+import KoaBody from 'koa-bodyparser'
+import cors from 'kcors'
 import { graphqlKoa, graphiqlKoa } from 'apollo-server-koa'
 import schema from './graphql'
 
 enablePrettyError()
 
 const app = new Koa()
+const router = new KoaRouter()
 const PORT = process.env.PORT ? parseInt(process.env.PORT, 10) : 4000
 const NODE_ENV = process.env.NODE_ENV ? process.env.NODE_ENV : 'development'
 
