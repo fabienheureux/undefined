@@ -3,7 +3,7 @@ import { ConnectionOptions } from 'thinky'
 const config: ConnectionOptions = {
   host: 'rethinkdb',
   port: 28015,
-  db: 'test'
+  db: 'undefined'
 }
 
 export default config
