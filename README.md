@@ -19,7 +19,7 @@ Run `docker-compose up -d` in root directory
 | Monitoring: 9*  | Portainer   |       |       |       |       |
 
 ## Graphql
-To add some data to the data through graphiql, you can go to `http://localhost:4000/graphiql`
+To add some data to the database through graphiql, you can go to `http://localhost:4000/graphiql`
 
 ### Add data
 ```
