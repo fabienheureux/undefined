@@ -8,6 +8,8 @@ services:
       - NODE_ENV="${NODE_ENV}"
     volumes:
       - ./web:/home/node/web
+    depends_on:
+      - "api"
     ports:
       - "3000:3000"
     command: bash -c "yarn && yarn start"
@@ -20,6 +22,10 @@ services:
     working_dir: /home/node/api
     volumes:
       - ./api:/home/node/api
+    depends_on:
+      - "rethinkdb"
+    links:
+      - "rethinkdb:rethinkdb"
     ports:
       - "4000:4000"
     command: bash -c "yarn && yarn start"
