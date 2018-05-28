@@ -11,7 +11,7 @@ export const Query = {
 
 export const Mutation = {
   createAuthor: async (_: any, data: any) =>
-    await r.save(Object.assign({}, data)),
+    await r.save(...data),
 
   updateAuthor: async (_: any, data: any) => {
     return await r

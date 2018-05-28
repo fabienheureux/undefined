@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { ApolloProvider } from 'react-apollo'
 import ApolloClient from 'apollo-boost'
 
@@ -6,6 +6,7 @@ import Users from './users'
 
 const client = new ApolloClient({
   uri: 'http://localhost:4000/graphql',
+  dataIdFromObject: o => o.id
 })
 
 const App = ()=>

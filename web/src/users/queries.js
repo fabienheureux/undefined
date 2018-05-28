@@ -5,8 +5,14 @@ export const GET_AUTHORS = gql`
     authors {
         id
         nickName
-        posts {
-            id
-        }
     }
 }`
+
+ 
+export const CREATE_AUTHORS = gql`
+mutation($nickName: String!){
+    createAuthor(nickName: $nickName){
+        id
+        nickName
+    }
+}`;
