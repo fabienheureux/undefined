@@ -11,7 +11,7 @@ enablePrettyError()
 const app = new Koa()
 const router = new KoaRouter()
 const PORT = process.env.PORT ? parseInt(process.env.PORT, 10) : 4000
-const NODE_ENV = process.env.NODE_ENV ? process.env.NODE_ENV : 'development'
+const NODE_ENV = process.env.NODE_ENV || 'development'
 
 router.post('/graphql', KoaBody(), graphqlKoa({ schema }))
 router.get('/graphql', graphqlKoa({ schema }))
