@@ -11,17 +11,16 @@ export const Query = {
 
 export const Mutation = {
   createPost: async (_: any, data: any) =>
-  await r.save(Object.assign({}, data)),
+  await r.sav(...data),
 
   updatePost: async (_: any, data: any) => {
-    return await r.get(data.id).updateAt(Object.assign({}, data)).run()
+    return await r.get(data.id).updateAt(...data).run()
   },
 
   deletePost: async (_: any, { id }: any) => {
     return await r.get(id).then((post: any) => {
-      if (post) {
+      if (post)
         return post.delete()
-      }
     })
   }
 }

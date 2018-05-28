@@ -19,7 +19,7 @@ router.post('/graphiql', graphiqlKoa({ endpointURL: '/graphql' }))
 router.get(
   '/graphiql',
   graphiqlKoa({
-    endpointURL: '/graphql'
+    endpointURL: '/graphql',
   })
 )
 
@@ -30,7 +30,3 @@ app.use(router.allowedMethods())
 app.listen(PORT, () =>
   console.log(`API is listening on port ${PORT} in ${NODE_ENV} mode`)
 )
-
-
-
-

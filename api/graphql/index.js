@@ -3,14 +3,11 @@ import { GraphQLSchema } from 'graphql'
 import { makeExecutableSchema } from 'graphql-tools'
 import resolvers from './resolvers'
 
-const typeDefs: string = fs.readFileSync(
-  './graphql/schema.graphql',
-  'utf-8'
-)
+const typeDefs: string = fs.readFileSync('./graphql/schema.graphql', 'utf-8')
 
 const executableSchema: GraphQLSchema = makeExecutableSchema({
   typeDefs,
-  resolvers
+  resolvers,
 })
 
 export default executableSchema
