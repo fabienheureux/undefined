@@ -1,9 +1,17 @@
+//@flow
 import React from 'react'
 import { Query, Mutation } from 'react-apollo'
 import {GET_AUTHORS, CREATE_AUTHORS} from './queries'
 
+type PropTypes = { 
+  
+}
 
-class Users extends React.Component{ 
+type StateTypes = { 
+  nickName: string
+}
+
+class Users extends React.Component<PropTypes,StateTypes>{ 
   
   state = { 
     nickName : ''
@@ -26,9 +34,8 @@ class Users extends React.Component{
 
   render() { 
     return (
-        <Query query={GET_AUTHORS} fetchPolicy={'cache-and-network'}>
+        <Query query={GET_AUTHORS}>
           {({ loading, error, data }) => {
-            console.log(data)
             if (loading) return <p>Loading...</p>
             if (error) return <p>Error :(</p>
             return (
