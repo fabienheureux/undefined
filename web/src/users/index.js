@@ -1,23 +1,24 @@
 //@flow
 import React from 'react'
-import { Query, Mutation } from 'react-apollo'
+import {Query, Mutation, OperationComponent} from 'react-apollo'
 import {GET_AUTHORS, CREATE_AUTHORS} from './queries'
 
-type PropTypes = { 
-  
+type AuthorType = { 
+  nickName: string,
+  id: string
 }
 
 type StateTypes = { 
   nickName: string
 }
 
-class Users extends React.Component<PropTypes,StateTypes>{ 
+class Users extends React.Component<*,StateTypes>{ 
   
   state = { 
     nickName : ''
   }
 
-  handleCreateAuthor = createAuthor => (evt, value) => { 
+  handleCreateAuthor = (createAuthor: OperationComponent<AuthorType,{nickName:string}>) => (evt: SyntheticInputEvent<HTMLInputElement>) => { 
     evt.preventDefault()
 
     createAuthor({
